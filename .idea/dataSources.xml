@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="2336015789">
+    <data-source source="LOCAL" name="Rails dasboard: development" uuid="ace9aa3e-a984-43c8-8507-bad74bddcf9a">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://127.0.0.1/dasboard_development</jdbc-url>
+      <user-name>root</user-name>
+      <user-password>df9bdf98df99df9edf9fdf9c</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails dasboard: test" uuid="4dfac7c3-f048-4a0c-b35d-69b823dd348c">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://127.0.0.1/dasboard_test</jdbc-url>
+      <user-name>root</user-name>
+      <user-password>df9bdf98df99df9edf9fdf9c</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails dasboard: production" uuid="998994d1-1e78-47ce-a317-b0639dabc1f5">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://127.0.0.1/dasboard_production</jdbc-url>
+      <user-name>root</user-name>
+      <user-password>df9bdf98df99df9edf9fdf9c</user-password>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+

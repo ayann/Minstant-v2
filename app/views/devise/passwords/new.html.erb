@@ -1,0 +1,23 @@
+<!-- ouverture de la <div id="haut"> au niveau du layout application -->
+<% content_for :title do %>
+    <title>Récupéré mot de passe</title>
+<% end %>
+    <h1>Mot de passe oublié?</h1>
+<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+  	<%= devise_error_messages! %>
+		<div class="inPut">
+			<%= f.label :email %>
+			<%= f.email_field :email, :autofocus => true %>
+		</div>
+
+	    <div id="submit">
+	    	<%= f.submit "Soumettre" %>
+	    </div>
+<% end %>
+</div> <!-- fin de la <div id="haut"> -->
+<div id="bas">
+    <div id="b1">
+        <%= link_to "Se connecter", new_session_path(resource_name) %>
+    </div>
+    <div id="b2"></div>
+</div>

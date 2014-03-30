@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= yield :title %>
+  <%= stylesheet_link_tag "dashboard_style", "http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+<section id="principale">
+  <section id="panel-left">
+    <div id="logo">
+      <div>
+        <i class="fa fa-fire fa-2x"></i>
+        Minstant
+      </div>
+    </div>
+    <div id="menu">
+      <ul>
+        <%= link_to dashboard_index_path do %>
+          <li>
+            <div>
+              <i class="fa fa-home fa-2x"></i>
+              Control
+            </div>
+          </li>
+        <% end %>
+        <%= link_to users_dashboard_index_path do %>
+          <li>
+            <div>
+              <i class="fa fa-user fa-2x"></i>
+              Gérer utilisateurs
+            </div>
+          </li>
+        <% end %>
+        <%= link_to salons_dashboard_index_path do %>
+          <li>
+            <div>
+              <i class="fa fa-coffee fa-2x"></i>
+              Gérer salons
+            </div>
+          </li>
+        <% end %>
+        <%= link_to setting_dashboard_index_path do %>
+          <li>
+            <div>
+              <i class="fa fa-cogs fa-2x"></i>
+              Paramètres
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </section>
+  <section id="container">
+    <section id="panel-up">
+      <div id="fr">
+        <div >
+          <input  type="text" placeholder="Rechercher">
+        </div>
+        <div>
+          <%= @login_email %>
+        </div>
+        <div>
+          <%= link_to log_out_path do %>
+              <div>
+                <i class="fa fa-sign-out fa-2x"></i>
+              </div>
+              <div style="margin-left: 0">
+                Deconnecter
+              </div>
+          <% end %>
+        </div>
+      </div>
+    </section>
+    <section id="content">
+      <%= yield %>
+    </section>
+  </section>
+</section>
+</body>
+
+</html>

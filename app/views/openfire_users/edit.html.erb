@@ -1,0 +1,13 @@
+<% content_for :title do %>
+    <title>Dashboard::Editer un compte</title>
+<% end %>
+<%= render "dashboard/shared/user_links" %>
+
+<div class="row">
+<h1>Editing openfire_user</h1>
+	
+	<%= render 'form' %>
+	
+	<%= link_to 'Show', @openfire_user %> |
+	<%= link_to 'Back', openfire_users_path %>
+</div>

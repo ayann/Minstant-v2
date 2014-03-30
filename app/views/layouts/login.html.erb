@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= yield :title %>
+  <%= stylesheet_link_tag "login", "http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600", media: "all", "data-turbolinks-track" => true%>
+  <!--<%= javascript_include_tag "application", "data-turbolinks-track" => true %>-->
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<section id="container">
+  <div class="row">
+    <div id="form">
+      <div id="haut">
+        <% flash.each do |name, msg| %>
+            <%= content_tag :div, msg, :id => "flash_#{name}" %>
+        <% end %>
+        <%= yield %>
+        <div id="logo">
+          <%= image_tag("logo.png", :alt => "logo") %>
+          <span>Minstant</span>
+        </div>
+      </div>
+    </div>
+</section>
+</body>
+</html>

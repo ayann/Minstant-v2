@@ -1,0 +1,38 @@
+<%= render "dashboard/shared/user_links" %>
+
+<div class="row">
+  <p id="notice"><%= notice %></p>
+  
+  <p>
+    <strong>Name:</strong>
+    <%= @openfire_user.name %>
+  </p>
+  
+  <p>
+    <strong>Username:</strong>
+    <%= @openfire_user.username %>
+  </p>
+  
+  <p>
+    <strong>Email:</strong>
+    <%= @openfire_user.email %>
+  </p>
+  
+  <p>
+    <strong>Groups:</strong>
+    <%= @openfire_user.groups %>
+  </p>
+  <p>
+    <strong>password:</strong>
+    <%= flash[:password] %>
+  </p>
+  
+  
+  <!-- <p>
+    <strong>Mi user:</strong>
+    <%#= @openfire_user.mi_user_id %>
+  </p> -->
+  <%= @idu %>
+  <%= link_to 'Edit', edit_openfire_user_path(@openfire_user) %> |
+  <%= link_to 'Back', openfire_users_path %>
+</div>

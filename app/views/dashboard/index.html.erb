@@ -1,0 +1,5 @@
+<% content_for :title do %>
+    <title>Dashboard::<%= @login_email %></title>
+<% end %>
+<%= render "dashboard/shared/user_links" %>
+<h1>Bienvenue <%= @login_email %></h1>

@@ -1,0 +1,24 @@
+<% content_for :title do %>
+    <title>Connexion à votre compte</title>
+<% end %>
+    <h1>Connexion</h1>
+    <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+        <div class="inPut">
+            <%= f.label :email %>
+            <%= f.email_field :email, :autofocus => true %>
+        </div>
+
+        <div class="inPut">
+            <%= f.label :password %>
+            <%= f.password_field :password %>
+        </div>
+
+        <div id="submit"><%= f.submit "Se connecter" %></div>
+    <% end %>
+</div>
+<div id="bas">
+    <div id="b1">
+    <%= link_to "Mot de pass oublié?", new_password_path(resource_name) %>
+    </div>
+    <div id="b2"></div>
+</div>
