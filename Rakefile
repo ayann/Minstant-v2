@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Dasboard::Application.load_tasks
+Minstant::Application.load_tasks

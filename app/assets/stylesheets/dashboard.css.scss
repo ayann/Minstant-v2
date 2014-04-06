@@ -120,6 +120,9 @@ body{
                   @include vcenter;
                   font-size: 14px;
                   margin-left: 10px;
+                  #search:focus{
+                    background-color: #F1F2F7;
+                  }
                   input{
                      width: 250px;
                      margin: 0;

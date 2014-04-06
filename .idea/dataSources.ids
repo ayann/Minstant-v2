@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source source="LOCAL" name="Rails dasboard: development" uuid="ace9aa3e-a984-43c8-8507-bad74bddcf9a">
+  <data-source source="LOCAL" name="Rails Minstant: development" uuid="ace9aa3e-a984-43c8-8507-bad74bddcf9a">
     <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
-  <data-source source="LOCAL" name="Rails dasboard: test" uuid="4dfac7c3-f048-4a0c-b35d-69b823dd348c">
+  <data-source source="LOCAL" name="Rails Minstant: test" uuid="4dfac7c3-f048-4a0c-b35d-69b823dd348c">
     <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
-  <data-source source="LOCAL" name="Rails dasboard: production" uuid="998994d1-1e78-47ce-a317-b0639dabc1f5">
+  <data-source source="LOCAL" name="Rails Minstant: production" uuid="998994d1-1e78-47ce-a317-b0639dabc1f5">
     <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
 </component>

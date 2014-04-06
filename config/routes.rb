@@ -1,7 +1,15 @@
-Dasboard::Application.routes.draw do
+Minstant::Application.routes.draw do
    devise_for :mi_users
-   root to: "login#index"
+   root to: "home#index"
    resources :login
+   resources :home do
+      collection do
+         get :connexIncrip
+         get :partenaires
+         get :about
+         get :contact
+      end
+   end
    resources :dashboard do
       collection do
          resources :openfire_users

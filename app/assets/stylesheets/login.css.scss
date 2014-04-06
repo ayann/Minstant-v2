@@ -8,6 +8,18 @@ body{
         width: 400px;
         height: 400px;
         margin: 0 auto;
+        #flash_alert{
+          background-color: rgb(240, 65, 36);
+          border-color: rgb(240, 65, 36);
+          color: white;
+          padding:20px 39px;
+        }
+        #flash_notice{
+          background-color: rgba(40, 182, 120, 1.0);
+          border-color: rgb(240, 65, 36);
+          color: white;
+          padding:20px 39px;
+        }
         #haut{
           background-color: #fff;
           box-shadow: 0px -1px 1px rgba(255, 255, 255, 1.0);
@@ -32,18 +44,22 @@ body{
               margin-bottom: 10px;
               input{
                 color: #A7ADB6;
-                width: 63%;
+                width: 50%;
+                display: inline-block;
                 border: none;
                 margin-left: 20px;
                 height: 30px;
-                font-size: 1.2em;
+                font-size: 1em;
+                display: inline-block;
               }
               label{
+                display: inline-block;
+                width: 40%;
                 text-shadow: 0 0 1px #A7ADB6;
-                font-size: 1.2em;
-              }
-              &:hover{
-                cursor: pointer;
+                font-size: 1em;
+                &:hover{
+                  cursor: pointer;
+                }
               }
             }
             #submit{

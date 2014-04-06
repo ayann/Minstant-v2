@@ -1,0 +1,473 @@
+@mixin incrustage(){
+	-webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5) inset;
+	-moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5) inset;
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5) inset;
+}
+$my-resume:rgba(232, 53, 86, 1.0);
+$my-work  :rgba(97, 207, 211, 1.0);
+$my-skill :rgba(209, 200, 37, 1.0);
+$blue     :rgba(0, 140, 186, 1.0);
+$red      :rgba(240, 65, 36, 1.0);
+$yellow   :rgba(240, 138, 36, 1.0);
+$green    :rgba(115, 184, 67, 1.0);
+$gris     :rgba(96, 96, 96, 1.0);
+
+html{
+	body{
+		font-family        : 'Source Sans Pro', sans-serif;
+	    font-size          : 19pt;
+	    font-weight        : 300;
+	    color              : #888;
+	    -webkit-text-stroke: 0.15px;
+
+		section#up-line{
+			background-color: $gris;
+			height: 10px;
+		}
+
+		header{
+			padding:15px 0 25px 0;
+			.row #about{
+			 	h1{
+					font-family: 'Source Sans Pro', sans-serif;
+					font-size  : 25pt;
+			    	color      : $gris;
+			    	font-weight: 600;
+			    	margin     : 0;
+			    	padding    : 0;
+				}
+				p{
+			    	color    : $gris;
+					font-size: 13pt;
+				}
+			}
+
+			.row #navigation{
+
+				/*-----  navigation ecran large  ------*/				
+					@media screen and (min-width: 885px) {
+						top:25px;
+						nav {
+							background:transparent;
+							.top-bar-section ul {
+								background: transparent;
+								li{
+									&:first-child{
+										a{
+											margin-left: 0;
+										}
+									}
+									a{
+										color      :#C3BFBE;
+										background : transparent;
+										font-size  : 11pt;
+										margin-left:5px;
+										&:hover{
+											color: $blue;
+										}
+									}
+								} 
+							}
+						}
+					}
+
+					@media screen and (min-width: 770px) and (max-width: 880px) {
+						top:10px;
+						nav {
+							background:transparent;
+							.top-bar-section ul {
+								background: transparent;
+								li{
+									&:first-child{
+										a{
+											margin-left: 0;
+										}
+									}
+									a{
+										color:#C3BFBE;
+										background: transparent;
+										font-size: 11pt;
+										margin-left:85px;
+										&:hover{
+											color: $blue;
+										}
+									}
+								} 
+							}
+						}
+					}
+					
+				/*-----  End of navigation ecran large  ------*/
+				
+				/*-----  navigation ecran small  ------*/				
+					@media screen and (min-width: 300px) and (max-width: 768px)  {
+						top:-50px;
+						nav.top-bar {
+							background:transparent;
+							.toggle-topbar.menu-icon a{
+								width: 30px;
+								height: 32px;
+								background-color: $gris;
+								border-radius: 5px;
+							}
+							.toggle-topbar.menu-icon a:after{
+								margin-right: 7px;
+							}
+						}
+						.expanded .title-area{
+							background:transparent;
+						}
+						ul.left{
+							margin-top: 10px;
+						}
+					}
+				/*-----  end of navigation ecran small  ------*/				
+
+			}
+		}
+
+		section#container{
+			border-bottom: 1px solid darken(#fff,10);
+			@media screen and (max-width: 768px) {
+				margin-top: -50px;
+			}
+			background-color: lighten(#EAE5E5,5);
+			padding-top: 3%;
+			padding-bottom: 3%;
+
+			&>.row{
+				//display: none;
+			}
+			#acceuil{
+				// margin-bottom: 15px;
+				#image-produit{
+					img{
+						padding: 3px;
+						margin-bottom: 20px;
+						background-color: #fff;
+						background-color: #fff;
+						@include incrustage;
+						// box-shadow: 0 4px 10px -1px rgba(200, 200, 200, 0.7);
+					}
+				}
+				#small_presentation{
+					background: none repeat scroll 0 0 #FFFFFF;
+				   	border: 1px solid #E5E5E5;
+				   	box-shadow: 0 4px 10px -1px rgba(200, 200, 200, 0.7);
+				   	font-weight: normal;
+					#titreP{
+						margin-bottom:20px;
+						h1{
+							font-family: 'Source Sans Pro', sans-serif;
+						    font-size: 50pt;
+						    font-weight: bold;
+						    color: $gris;
+						}
+						p{
+							font-size: 20pt;
+						    color: $gris;
+						    font-weight: 300;
+						}
+					}
+					#about-link{
+						.large-4{
+							.panel{
+								@include incrustage;
+								height: 130px;
+								text-align: center;
+								margin-top: 20px;
+								padding: 20px 0 0;
+								border-radius:5px;
+								background-color: #FFFFFF;
+								border: none;
+								.green{
+									background-color: $green;
+								}
+								.blue{
+									background-color: $blue;
+								}
+								.gris{
+									background-color: $gris;
+								}
+								.carre{
+									i{
+										color:#fff;
+										text-shadow: 0 0 1px 2px #FFFFFF;
+									}
+									text-align: center;
+									line-height: 75px;
+									display: inline-block;
+									width: 60px;
+									height: 60px;
+									// background-color: $gris;
+									margin-bottom: 10px;
+									border-radius: 5px;
+								}
+								p{
+									color: darken(#E9E9E9,50);
+									text-shadow: 0 0 1px 2px darken(#E9E9E9,30);
+									font-size: 15px;
+									font-weight: 300;
+								}
+							}
+						}
+						#my-resume{
+							padding-top: 40px;
+							padding-left: 32px;
+							background-color: $my-resume;
+							p{
+								margin-left: 15px;
+							}
+							&:hover{
+								background-color: darken($my-resume, 20);
+							}
+						}
+						#my-work{
+							padding-top: 55px;
+							padding-left: 20px;
+							background-color: $my-work;
+							&:hover{
+								background-color: darken($my-work, 20);
+							}
+						}
+						#my-skill{
+							padding-top: 40px;
+							padding-left: 17px;
+							background-color: $my-skill;
+							p{
+								margin-left: 30px;
+							}
+							&:hover{
+								background-color: darken($my-skill, 20);
+							}
+						}
+					}
+					#textP{
+						margin-top: 20px;
+						font-size: 12pt;
+						text-align: justify;
+						span{
+							line-height: 18px;
+						}
+						em,blockquote{
+							font-style: italic;
+						}
+						blockquote{
+							font-size: 12pt;
+							font-weight: bold;
+						}
+					}
+				}
+			}
+			#inscrip-connex{
+				#form-change{
+					@include incrustage;
+				}
+				input{@include incrustage;}
+				#inscription{
+					display: none;
+				}
+				#image{
+					img{
+						width: 50%;
+					}
+				}
+			}
+			#partenaires{
+				.columns{
+					.panel{
+						// width: 50%;
+						background: none repeat scroll 0 0 #FFFFFF;
+					   	border: 1px solid #E5E5E5;
+					   	box-shadow: 0 4px 10px -1px rgba(200, 200, 200, 0.7);
+					   	.text{
+					   		display: none;
+					   	}
+					}
+				}
+			}
+			#competences{
+				h1{
+					font-weight: 200;
+					font-size: 14pt;
+					i{
+						font-weight: normal;
+						padding-right: 20px;
+					}
+				}
+				.progress{
+						background-color: #fff;
+						border-color: darken(#fff,10);
+						width: 95%;
+						i{
+							float: right;
+							font-size: 10pt;
+							margin-top: 3px;
+							margin-right: 5px;
+							display: none;
+						}
+					span{
+						span{
+							font-size: 12pt;
+							display: block;
+							margin: 0;
+							color: #fff;
+							height: 100%;
+							padding: 2px 8px 0;
+							font-weight: 300;
+							// border-right: 2px solid darken(#008CBA,2);
+						}
+					} 
+						
+				}
+			}
+
+			#projets{
+				.panel .row p{
+					font-size: 14pt;
+					text-align: center;
+					margin-top: 20px;
+					color: $my-work;
+					&:last-child{
+						font-size: 13pt;
+						text-align: left;
+						line-height: 15pt;
+						color: #000;
+					}
+				}
+			}
+
+			#parcours{
+				&>.row{
+					background: none repeat scroll 0 0 #FFFFFF;
+				   	border: 1px solid #E5E5E5;
+				   	box-shadow: 0 4px 10px -1px rgba(200, 200, 200, 0.7);
+				   	font-weight: normal;
+					padding: 20px;
+				}
+					h1{
+						color: $my-work;
+						i{
+							margin-right: 10px;
+						}
+						margin-bottom: 10px;
+					}
+					.row li{
+						p{
+							font-size: 12pt;
+							text-align: left;
+							font-weight: normal;
+							margin: 0;
+							margin-bottom: 10px;
+						}
+						span{
+							display: inline-block;
+							color: $my-resume;
+							font-size: 12pt;
+							font-style: italic;
+							margin-bottom: 5px;
+						}
+					}
+				
+				.content{
+					span{
+						font-size: 11pt;
+						display: inline-block;
+						margin-bottom: 10px;
+						color: $my-resume;
+						line-height: 14pt;
+					}
+					p{
+						i{
+							display: inline-block;
+							margin-right: 15px;
+						}
+						span{
+							display: inline;
+							color: #000;
+						}
+						font-size: 12pt;
+						margin-bottom: 10pt;
+					}
+				}
+				dd a{
+					color: $my-work;
+					border-bottom: 1px dashed darken(#E3E3E3, 20);
+					i{
+						float: right;
+					}
+
+				} 
+			}
+
+			#contact{
+				textarea{
+					height: 180px;
+					resize:none;
+				}
+			}
+
+			#aboutme{
+				background: none repeat scroll 0 0 #FFFFFF;
+			   	border: 1px solid #E5E5E5;
+			   	box-shadow: 0 4px 10px -1px rgba(200, 200, 200, 0.7);
+			   	font-weight: normal;
+				h1{
+					text-align: center;
+					font-weight: 200;
+					color: $gris;
+					font-size: 75%;
+					color: $my-work;
+					font-weight: bold;
+				}
+				#passion{
+					h1{
+						font-size: 90%;
+					}
+					.panel{
+						line-height: inherit;
+					}
+				}
+				.panel{
+					font-size: 13pt;
+					line-height: 17pt;
+				}
+			}
+		}
+
+		footer{
+			padding-top: 10px;
+			border-top: 5px solid #fff;
+			background-color: $gris;
+			color: #fff;
+			a{
+				color: #fff;
+				font-weight: 400;
+				text-shadow: 0 0 1px 2px #fff;
+				&:hover{
+					color: $green;
+					text-shadow: 0 0 1px 3px $green;
+				}
+			}
+			li{
+				padding-bottom: 10px !important;
+				.copy{
+					font-size: 22pt;
+					font-weight: 400;
+				}
+				span.small{
+					font-size: 10pt;
+				}
+				span{
+					font-size: 11pt;
+					a{
+						font-size: 13pt;
+						margin-right: 10px;
+						color: #fff;
+						font-weight: 400;
+					}
+				}
+			}
+		}
+	}
+}

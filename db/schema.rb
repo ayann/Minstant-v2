@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140305200230) do
+ActiveRecord::Schema.define(version: 20140305192824) do
 
   create_table "mi_users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -28,19 +28,19 @@ ActiveRecord::Schema.define(version: 20140305200230) do
     t.datetime "updated_at"
   end
 
-  add_index "mi_users", ["email"], name: "index_mi_users_on_email", unique: true, using: :btree
-  add_index "mi_users", ["reset_password_token"], name: "index_mi_users_on_reset_password_token", unique: true, using: :btree
+  add_index "mi_users", ["email"], name: "index_mi_users_on_email", unique: true
+  add_index "mi_users", ["reset_password_token"], name: "index_mi_users_on_reset_password_token", unique: true
 
   create_table "openfire_users", force: true do |t|
     t.string   "name"
     t.string   "username"
+    t.string   "email"
     t.string   "groups"
     t.integer  "mi_user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "email"
   end
 
-  add_index "openfire_users", ["mi_user_id"], name: "index_openfire_users_on_mi_user_id", using: :btree
+  add_index "openfire_users", ["mi_user_id"], name: "index_openfire_users_on_mi_user_id"
 
 end

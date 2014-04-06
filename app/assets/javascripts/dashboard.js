@@ -10,4 +10,7 @@
         $('a').click(function(event) {
             hauteur();
         });
+        setInterval(function(){
+            hauteur() ;
+        }, 1000);
     });

@@ -1,5 +1,5 @@
 <% content_for :title do %>
-    <title>Connexion à votre compte</title>
+    Connexion à votre compte
 <% end %>
     <h1>Connexion</h1>
     <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
@@ -9,7 +9,7 @@
         </div>
 
         <div class="inPut">
-            <%= f.label :password %>
+            <%= f.label :mot_de_passe %>
             <%= f.password_field :password %>
         </div>
 
@@ -18,7 +18,7 @@
 </div>
 <div id="bas">
     <div id="b1">
-    <%= link_to "Mot de pass oublié?", new_password_path(resource_name) %>
+        <%= link_to "Mot de pass oublié?", new_password_path(resource_name) %>
     </div>
     <div id="b2"></div>
 </div>

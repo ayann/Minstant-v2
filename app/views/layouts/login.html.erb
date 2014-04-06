@@ -15,12 +15,13 @@
             <%= content_tag :div, msg, :id => "flash_#{name}" %>
         <% end %>
         <%= yield %>
-        <div id="logo">
-          <%= image_tag("logo.png", :alt => "logo") %>
-          <span>Minstant</span>
-        </div>
+      <!-- fin div haut -->
+      <div id="logo">
+        <%= image_tag("logo.png", :alt => "logo") %>
+        <span>Minstant</span>
       </div>
     </div>
+  </div>
 </section>
 </body>
 </html>
