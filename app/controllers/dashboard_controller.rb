@@ -11,7 +11,9 @@ class DashboardController < ApplicationController
     
   end
   def salons
-    
+    api = OpenfireApiRuby::RoomService.new(:url => "http://localhost:9090/", :secret => "n84a1588")
+    api.add_room!(:roomname => "room", :jid => "jid", :subdomain => "groupchat")
+    # api.add_muc_service!(:subdomain=>'demo-service', :description=>'this is a demo muc service')
   end
   def setting
     

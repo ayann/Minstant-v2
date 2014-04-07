@@ -45,21 +45,19 @@ body{
       width: 100%;
       height: 100%;
       #panel-left {
-         background-color: $panneau;
-         float: left;
-         width: 8%;
-         height: 100%;
-         display: inline-block;
+        background-color: $panneau;
+        float: left;
+        width: 8%;
+        height: 100%;
+        display: inline-block;
 
-         #logo{
-
-           height: 76px;
-           line-height: 76px;
-           text-align: center;
-
-           font-size: 14px;
-           color: rgba(224, 60, 82, 1.0);
-           background-color: rgba(18, 25, 41, 1.0);
+        #logo{
+          height: 76px;
+          line-height: 76px;
+          text-align: center;
+          font-size: 14px;
+          color: rgba(224, 60, 82, 1.0);
+          background-color: rgba(18, 25, 41, 1.0);
 
            div{
              @include vcenter;
@@ -71,28 +69,31 @@ body{
            }
          }
          #menu{
-           ul{
+            ul{
              li{
-               display: block;
-               height: 76px;
-               line-height: 76px;
-               text-align: center;
-
-               width: 100%;
-               font-size: 14px;
-               color: #747F95;
-               cursor: pointer;
-               border-bottom: 1px solid #575F70;
-               -webkit-transition-property: background-color;
-               transition-property: background-color;
-               -webkit-transition-duration: 0.2s;
-               transition-duration: 0.2s;
-               &:hover{
-                 color: white;
-                 text-shadow: 0 0 1px #000;
-                 border-bottom: none;
-                 background-color: rgba(234, 44, 70, 1.0);
-               }
+              display: block;
+              height: 76px;
+              line-height: 76px;
+              text-align: center;
+              width: 100%;
+              font-size: 14px;
+              cursor: pointer;
+              border-bottom: 1px solid #575F70;
+              -webkit-transition-property: background-color;
+              transition-property: background-color;
+              -webkit-transition-duration: 0.2s;
+              transition-duration: 0.2s;
+              a{
+                color: #747F95;
+              }
+              &:hover{
+                a{
+                  color: white;
+                  text-shadow: 0 0 1px #000;
+                }
+                border-bottom: none;
+                background-color: rgba(234, 44, 70, 1.0);
+              }
                div{
                  @include vcenter;
                  i{
@@ -254,28 +255,33 @@ body{
                   float: left;
                   margin-right:10px;
                   margin-bottom: 10px;
-                  &:hover{
-                     border: 2px solid #838383;
-                  }
                   border: 2px solid #F1F2F7;
                   font-size: 18px;
                   width: 240px;
                   height: 120px;
                   color: #fff;
-                  font-weight: 100;
+                  font-weight: 400;
+                  &:hover{
+                     //border: 2px solid #838383;
+                  }
                   #u-content{
                      height: 96px;
                      padding: 10px 0 0 20px;
                      line-height: 30px;
                      p{
-                        font-weight: 100;
+                        font-weight: 400;
                         color: #fff;
                      }
 
                   }
                   #u-foot{
                      height: 20px;
-                     color: #fff;
+                     color: #fff !important;
+                     a{
+                      color: #fff !important;
+                      overflow: hidden;
+                      display: block;
+                     }
                      span{
                         margin-top: 5px;
                         float: left;

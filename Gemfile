@@ -4,10 +4,11 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.4'
 gem 'devise'
 gem 'rename'
-gem "simple_form"
+gem 'simple_form'
 gem 'font-awesome-sass'
 gem 'foundation-rails'
-gem "openfire_api_ruby"
+gem 'openfire_api_ruby'
+gem 'openfire_room_api'
 group :assets do
 	# Use SCSS for stylesheets
 	gem 'sass-rails', '~> 4.0.0'

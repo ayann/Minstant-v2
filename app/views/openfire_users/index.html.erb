@@ -1,74 +1,79 @@
+<% if  params[:tache]=="rem" %>
+   <% 
+      classe="put-red" 
+      alertType= "error"
+   %>
+<% elsif params[:tache]=="edit"%>
+   <% 
+      classe="put-yellow" 
+      alertType= "warning"
+   %>
+<% else %>
+   <% 
+      classe="put-blue" 
+      alertType= ""
+   %>
+<% end %>
+
 <% content_for :title do %>
-    <title>Dashboard::Tous les comptes</title>
+   Dashboard::Tous les comptes
 <% end %>
 <%= render "dashboard/shared/user_links" %>
 <hr>
-<div class="row 
-   <% if  params[:tache]=="rem" %>
-   put-red
-   <% elsif params[:tache]=="edit"%>
-   put-yellow
-   <% else %>
-   put-blue
-   <% end %>" 
-   id="all-user">
+
+<div class="row <%= classe %>" id="all-user">
+
    <% if @openfire_users.length>0 %>
-      <div  class="
-         <% if  params[:tache]=="rem" %>
-         alert-box error
-         <% elsif params[:tache]=="edit"%>
-         alert-box warning
-         <% else %>
-         alert-box
-         <% end %>">
+
+      <div  class="alert-box <%= alertType %>">
          <h1>
             <% if  params[:tache]=="rem" %>
-            Suppression des comptes de votre entreprise
+               Suppression des comptes de votre entreprise
             <% elsif params[:tache]=="edit"%>
-            Modifier des comptes de votre entreprise 
+               Modifier des comptes de votre entreprise 
             <% else %>
-            Liste de tous les comptes
+               Liste de tous les comptes
             <% end %>
          </h1>
       </div>
       <hr>
    
       <% @openfire_users.each do |openfire_user| %>
+
          <div class="u-present">
             <div id="u-content">
-              <p>Nom &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= openfire_user.name %></p>
-              <p>Pseudo &nbsp;&nbsp;&nbsp;&nbsp;<%= openfire_user.username %></p>
+               <p>Nom &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= openfire_user.name %></p>
+               <p>Pseudo &nbsp;&nbsp;&nbsp;&nbsp;<%= openfire_user.username %></p>
             </div>
-            <% if  params[:tache]=="rem" %>
-               <%= link_to openfire_user, method: :delete, data: { confirm: 'Confirmer la Suppression?' } do %>
-                  <div id="u-foot">
+            <div id="u-foot">
+               <% if  params[:tache]=="rem" %>
+                  <%= link_to openfire_user, method: :delete, data: { confirm: 'Confirmer la Suppression?' } do %>
                      <span>Supprimer</span>
                      <i class="fa fa-arrow-circle-o-right"></i>
-                     <div class="clear"></div>
-                  </div>
-               <% end %>
-            <% elsif params[:tache]=="edit"%>
-               <%= link_to edit_openfire_user_path(openfire_user) do %>
-                  <div id="u-foot">
+                  <% end %>
+               <% elsif params[:tache]=="edit"%>
+                  <%= link_to edit_openfire_user_path(openfire_user) do %>
                      <span>Modifier</span>
                      <i class="fa fa-arrow-circle-o-right"></i>
-                     <div class="clear"></div>
-                  </div>
-               <% end %>
-            <% else %>
-               <%= link_to openfire_user do %>
-                  <div id="u-foot">
+                  <% end %>
+               <% else %>
+                  <%= link_to openfire_user do %>
                      <span>Plus d'information</span>
                      <i class="fa fa-arrow-circle-o-right"></i>
-                     <div class="clear"></div>
-                  </div>
+                  <% end %>
                <% end %>
-            <% end %>
+                  <div class="clear"></div>
+            </div>
          </div>
+
       <% end %>
+
    <% else %>
+
       <div class="nothing">
          <h1>Aucun compte</h1>
       </div>
+
    <% end %>
+   
 </div>

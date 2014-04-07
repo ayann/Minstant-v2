@@ -66,6 +66,7 @@ GEM
     minitest (4.7.5)
     multi_json (1.9.2)
     openfire_api_ruby (1.0.0)
+    openfire_room_api (0.1.0)
     orm_adapter (0.5.0)
     polyglot (0.3.4)
     rack (1.5.2)
@@ -141,6 +142,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   openfire_api_ruby
+  openfire_room_api
   rails (= 4.0.4)
   rails_layout
   rename

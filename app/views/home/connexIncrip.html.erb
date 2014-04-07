@@ -1,12 +1,14 @@
 <div class="row" id="inscrip-connex">
-	<a href="#inscription" id="form-change" class="button secondary expand tiny">Inscription</a>
     <%= render('layouts/messages') %>
     
 	<div id ="connexion" class="large-6 small-12 medium-12 columns">
     	<%= render('home/connexion_form') %>
+		<a href="#inscription" id="form-change" class="button success expand tiny">Inscription</a>
 	</div>
+
     <div id ="inscription" class="large-6 small-12 medium-12 columns">
     	<%= render('home/inscription_form') %>		
+		<a href="#inscription" id="form-change" class="button success expand tiny">Inscription</a>
     </div>
 	<div id="image" class="large-6 small-12 medium-12 columns">
 		<%= image_tag('Lockicon.png') %>
