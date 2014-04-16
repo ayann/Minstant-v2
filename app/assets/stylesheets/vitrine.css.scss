@@ -15,6 +15,14 @@ $yellow   :rgba(240, 138, 36, 1.0);
 $green    :rgba(115, 184, 67, 1.0);
 $gris     :rgba(96, 96, 96, 1.0);
 .clearbox{clear: both;}
+.hint{
+	clear: left;
+	 margin-left: 120px;
+	 font-size: 12px;
+	 color: #555;
+	 display: block;
+	 font-style: italic;
+}
 html{
 	body{
 		font-family        : 'Source Sans Pro', sans-serif;

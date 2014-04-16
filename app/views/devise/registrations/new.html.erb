@@ -4,10 +4,21 @@
 	  	<%= devise_error_messages! %>
 
 		<div class="inPut">
-			<%= f.label :email %>
-			<%= f.email_field :email, :autofocus => true %>
+			<%= f.label :companyName %>
+			<%= f.text_field :companyName, :autofocus => true %>
 		</div>
-
+		<div class="inPut">
+			<%= f.label :address %>
+			<%= f.text_field :address %>
+		</div>
+		<div class="inPut">
+			<%= f.label :tel %>
+			<%= f.text_field :tel %>
+		</div>
+		<div class="inPut">
+			<%= f.label :email %>
+			<%= f.email_field :email %>
+		</div>
 		<div class="inPut">
 			<%= f.label :password %>
 			<%= f.password_field :password %>

@@ -22,17 +22,10 @@
     <strong>Groups:</strong>
     <%= @openfire_user.groups %>
   </p>
-  <p>
-    <strong>password:</strong>
-    <%= flash[:password] %>
-  </p>
-  
-  
-  <!-- <p>
-    <strong>Mi user:</strong>
-    <%#= @openfire_user.mi_user_id %>
-  </p> -->
-  <%= @idu %>
-  <%= link_to 'Edit', edit_openfire_user_path(@openfire_user) %> |
-  <%= link_to 'Back', openfire_users_path %>
+  <% if flash[:password] %>
+    <p>
+      <strong>password:</strong>
+      <%= flash[:password] %>
+    </p>
+  <% end %>
 </div>

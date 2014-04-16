@@ -1,5 +1,6 @@
 Minstant::Application.routes.draw do
-   devise_for :mi_users
+   # devise_for :mi_users
+   devise_for :mi_users, :controllers => {:registrations => "my_devise/registrations"}
    root to: "home#index"
    resources :login
    resources :home do
@@ -8,8 +9,10 @@ Minstant::Application.routes.draw do
          get :partenaires
          get :about
          get :contact
+         post :send_mail
       end
    end
+   # match '/send_mail', to: 'home#send_mail', via: 'post'
    resources :dashboard do
       collection do
          resources :openfire_users

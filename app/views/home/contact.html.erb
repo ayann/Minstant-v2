@@ -1,28 +1,25 @@
 <div class="row" id="contact">
 	<div class="large-12 small-12 columns">
-		<form action="" method="post">
+		<%= render('layouts/messages') %>
+		<%= simple_form_for :home, :url => send_mail_home_index_path do |f| %>
 			<div class="row">
 				<div class="large-6 small-6 columns">
-					<label>
-						<input type="text" name="nom"  placeholder="Nom">
-					</label>
+					<%= f.input :name, :autofocus => true%>
 				</div>
 				<div class="large-6 small-6 columns">
-					<label>
-						<input type="text" name="email"  placeholder="Email">
-					</label>
+					<%= f.input :email%>
 				</div>
 			</div>
 			<div class="row">
 				<div class="large-12 small-12 columns">
-					<textarea name="message"></textarea>
+					<%= f.input :message, as: :text %>
 				</div>
 			</div>
 			<div class="row">
 				<div class="large-12 small-12 columns">
-					<input class="button expand" type="submit" name="submit" value="Envoyer">
+		        	<%= f.button :submit, 'Envoyer',:class => 'button tiny expand' %>
 				</div>
 			</div>
-		</form>
+		<% end %>
 	</div>
 </div>

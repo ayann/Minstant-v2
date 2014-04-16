@@ -13,7 +13,6 @@ class DashboardController < ApplicationController
     # api.add_muc_service!(:subdomain=>'demo-service', :description=>'this is a demo muc service')
   #end
   def setting
-    
   end
   private
   def login_email

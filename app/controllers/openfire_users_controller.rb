@@ -32,11 +32,17 @@ class OpenfireUsersController < ApplicationController
         password=SecureRandom.hex(8)[0,6]
         @mi_user=MiUser.find(current_mi_user.id)
         @openfire_user = @mi_user.openfire_users.new(openfire_user_params)
+        if @openfire_user.label
+            @openfire_user.label=@mi_user.companyName+"_"+@openfire_user.label
+        else
+            @openfire_user.label=@mi_user.companyName
+        end
         @openfire_user.password=password
         respond_to do |format|
             if @openfire_user.save
               flash[:password] = password
-              format.html { redirect_to @openfire_user, notice: 'Openfire user was successfully created.' }
+              MinstantEmail.registration_confirmation(@openfire_user).deliver
+              format.html { redirect_to @openfire_user, notice: 'Le compte openfire a été crée avec success.' }
             else
                 format.html { render action: 'new' }
             end
