@@ -16,6 +16,6 @@ class OpenfireUser < ActiveRecord::Base
     api.delete_user!(:username =>self.username)
   end
   def api
-    api = OpenfireApiRuby::UserService.new(:url => "http://localhost:9090/", :secret => "n84a1588")
+    api = OpenfireApiRuby::UserService.new(:url => "http://minstant.nilsine.fr:9090/", :secret => "980MGw4s")
   end
 end

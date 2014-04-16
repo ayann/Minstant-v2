@@ -9,6 +9,7 @@ gem 'font-awesome-sass'
 gem 'foundation-rails'
 gem 'openfire_api_ruby'
 gem 'openfire_room_api'
+gem 'sqlite3'
 group :assets do
 	# Use SCSS for stylesheets
 	gem 'sass-rails', '~> 4.0.0'
@@ -26,7 +27,6 @@ gem 'jbuilder', '~> 1.2'
 group :development do
 	# Use mysql as the database for Active Record
 	#gem 'mysql'
-	gem 'sqlite3'
 	gem 'rails_layout'
 end
 
