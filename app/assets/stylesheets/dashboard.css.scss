@@ -198,6 +198,14 @@ body{
                   }
                }
             }
+            #acceuil{
+              h1{
+                font-size: 65pt;
+                font-weight: bold;
+                color: $gris;
+                margin: 10px 0 15px 0;
+              }
+            }
             #new-ou,#edit-ou{
               font-size: 14px;
               >.columns{
