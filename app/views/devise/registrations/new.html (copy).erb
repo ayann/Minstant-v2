@@ -1,0 +1,35 @@
+<div class="row" id="devise_sign_up_form">
+		<%= devise_error_messages! %>
+	    <h1>Inscription</h1>
+		<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+			<div class="inPut">
+				<%= f.label :companyName %>
+				<%= f.text_field :companyName, :autofocus => true %>
+			</div>
+			<div class="inPut">
+				<%= f.label :address %>
+				<%= f.text_field :address %>
+			</div>
+			<div class="inPut">
+				<%= f.label :tel %>
+				<%= f.text_field :tel %>
+			</div>
+			<div class="inPut">
+				<%= f.label :email %>
+				<%= f.email_field :email %>
+			</div>
+			<div class="inPut">
+				<%= f.label :password %>
+				<%= f.password_field :password %>
+			</div>
+	
+			<div class="inPut">
+				<%= f.label :password_confirmation %>
+				<%= f.password_field :password_confirmation %>
+			</div>
+		    <div id="submit">
+		    	<%= f.submit "S'inscrire",:class => 'button tiny expand' %>
+		    </div>
+		<% end %>
+	 <!-- fin de la <div id="haut"> --></div>
+       

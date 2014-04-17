@@ -19,6 +19,6 @@ class HomeController < ApplicationController
     email = params[:home][:email]
     message = params[:home][:message]
     MinstantEmail.contact(name, email, message).deliver
-    redirect_to contact_home_index_path, notice: 'message envoyé avec success'
+    redirect_to contact_home_index_path, notice: 'message envoye avec success'
   end
 end

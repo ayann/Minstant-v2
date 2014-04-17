@@ -77,4 +77,8 @@ Minstant::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+  config.action_mailer.default_url_options = {:host => 'minstant.nilsine.fr'} 
+  config.action_mailer.perform_deliveries = true # Pour autorisser l'envoi d'un mail en developpement
+  config.action_mailer.raise_delivery_errors = true # Pour afficher des erreurs lorsque le mail n'est pas envoye 
+  config.action_mailer.default :charset => "utf-8"
 end

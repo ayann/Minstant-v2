@@ -42,7 +42,7 @@ class OpenfireUsersController < ApplicationController
             if @openfire_user.save
                 session[:password] =password
                 MinstantEmail.registration_confirmation(@openfire_user).deliver
-                format.html { redirect_to @openfire_user, notice: 'Le compte openfire a été crée avec success. Un mail contenant les infos de connexion a éte envoyé à l\'adresse mail indiquée' }
+                format.html { redirect_to @openfire_user, notice: 'Le compte openfire a ete cree avec success. Un mail contenant les infos de connexion a ete envoye a l\'adresse mail indiquee' }
             else
                 format.html { render action: 'new' }
             end
@@ -54,7 +54,7 @@ class OpenfireUsersController < ApplicationController
     def update
         respond_to do |format|
             if @openfire_user.update(openfire_user_params)
-                format.html { redirect_to @openfire_user, notice:'Le compte openfire a été mis à jour avec success. Un mail contenant les nouvelles données a éte envoyé à l\'adresse mail indiquée' }
+                format.html { redirect_to @openfire_user, notice:'Le compte openfire a ete mis a jour avec success. Un mail contenant les nouvelles donnees a ete envoye a l\'adresse mail indiquee' }
             else
                 format.html { render action: 'edit' }
             end
