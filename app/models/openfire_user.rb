@@ -10,7 +10,7 @@ class OpenfireUser < ActiveRecord::Base
     api.add_user!(:username => self.username, :password => self.password, :name => self.name, :email =>self.email, :groups =>self.groups)
   end
   def update_on_openfire
-    api.update_user!(:username => self.username, :password => self.password, :name => self.name, :email =>self.email, :groups =>self.groups)
+    api.update_user!(:username => self.username, :name => self.name, :email =>self.email, :groups =>self.groups)
   end
   def delete_on_openfire
     api.delete_user!(:username =>self.username)

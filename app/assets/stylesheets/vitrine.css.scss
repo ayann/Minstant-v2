@@ -1,4 +1,4 @@
-@mixin inscrustation(){
+@mixin incrustation(){
 	-webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5) inset;
 	-moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5) inset;
 	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5) inset;
@@ -14,14 +14,38 @@ $red      :rgba(240, 65, 36, 1.0);
 $yellow   :rgba(240, 138, 36, 1.0);
 $green    :rgba(115, 184, 67, 1.0);
 $gris     :rgba(96, 96, 96, 1.0);
+
 .clearbox{clear: both;}
-.hint{
+.hint,.form-inputs small{
 	clear: left;
-	 margin-left: 120px;
-	 font-size: 12px;
-	 color: #555;
-	 display: block;
-	 font-style: italic;
+	margin-left: 120px;
+	font-size: 12px;
+	color: #555;
+	display: block;
+	font-style: italic;
+	margin-bottom: 10px;
+}
+.hint{
+	margin-top: -12px;
+}
+#error_explanation{
+	background-color: #F04124;
+    border-color: #DE2D0F;
+    color: #FFFFFF;
+    border-style: solid;
+    border-width: 1px;
+    color: #FFFFFF;
+    display: block;
+    font-size: 0.8125rem;
+    font-weight: normal;
+    margin-bottom: 1.25rem;
+    padding: 0.875rem 1.5rem 0.875rem 0.875rem;
+    position: relative;
+    h2{
+    	color: #fff;
+    	font-size: 16px;
+    	margin-bottom: 10px;
+    }
 }
 html{
 	body{
@@ -143,10 +167,6 @@ html{
 			background-color: lighten(#EAE5E5,5);
 			padding-top: 3%;
 			padding-bottom: 3%;
-
-			&>.row{
-				//display: none;
-			}
 			#acceuil{
 				#image-produit{
 					img{
@@ -154,7 +174,7 @@ html{
 						margin-bottom: 20px;
 						background-color: #fff;
 						background-color: #fff;
-						@include inscrustation;
+						@include incrustation;
 					}
 				}
 				#small_presentation{
@@ -165,7 +185,6 @@ html{
 					#titreP{
 						margin-bottom:20px;
 						h1{
-							font-family: 'Source Sans Pro', sans-serif;
 						    font-size: 50pt;
 						    font-weight: bold;
 						    color: $gris;
@@ -179,7 +198,7 @@ html{
 					#about-link{
 						.large-4{
 							.panel{
-								@include inscrustation;
+								@include incrustation;
 								height: 130px;
 								text-align: center;
 								margin-top: 20px;
@@ -267,11 +286,22 @@ html{
 				}
 			}
 			#inscrip-connex{
+				label{
+					font-size: 15px;
+					color: #555;
+					font-style: italic
+				}
+				h1{
+					font-size: 50pt;
+					font-weight: bold;
+					color: $gris;
+					margin: 0px 0 15px 0;
+				}
 				#form-change{
-					@include inscrustation;
+					@include incrustation;
 					margin-bottom: 0;
 				}
-				input{@include inscrustation;}
+				input{@include incrustation;}
 				#inscription{
 					display: none;
 				}
@@ -298,7 +328,7 @@ html{
 				#presentation{
 					padding   : 5px;
 					background: #FFFFFF;
-				   	@include inscrustation;
+				   	@include incrustation;
 					img{
 						width: 70%;
 						float: left;
@@ -336,7 +366,6 @@ html{
 					}
 				}
 			}
-			
 			#contact{
 				textarea{
 					height: 180px;
@@ -344,6 +373,27 @@ html{
 				}
 				input[name="submit"]{
 					margin-bottom: 0;
+				}
+				label{
+					font-size: 15px;
+					color: #555;
+					font-style: italic
+				}
+			}
+			#devise_sign_up_form, #devise_registration_edit_form{
+				@include ombre;
+				padding: 10px;
+				background-color: #fff;
+				label{
+					font-size: 15px;
+					color: #555;
+					font-style: italic
+				}
+				h1{
+					font-size: 50pt;
+					font-weight: bold;
+					color: $gris;
+					margin: 10px 0 15px 0;
 				}
 			}
 		}

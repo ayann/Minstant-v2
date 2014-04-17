@@ -32,17 +32,17 @@ class OpenfireUsersController < ApplicationController
         password=SecureRandom.hex(8)[0,6]
         @mi_user=MiUser.find(current_mi_user.id)
         @openfire_user = @mi_user.openfire_users.new(openfire_user_params)
-        if @openfire_user.label
-            @openfire_user.label=@mi_user.companyName+"_"+@openfire_user.label
+        if @openfire_user.groups
+            @openfire_user.groups=@mi_user.companyName+"_"+@openfire_user.groups
         else
-            @openfire_user.label=@mi_user.companyName
+            @openfire_user.groups=@mi_user.companyName
         end
         @openfire_user.password=password
         respond_to do |format|
             if @openfire_user.save
-              flash[:password] = password
-              MinstantEmail.registration_confirmation(@openfire_user).deliver
-              format.html { redirect_to @openfire_user, notice: 'Le compte openfire a été crée avec success.' }
+                session[:password] =password
+                MinstantEmail.registration_confirmation(@openfire_user).deliver
+                format.html { redirect_to @openfire_user, notice: 'Le compte openfire a été crée avec success. Un mail contenant les infos de connexion a éte envoyé à l\'adresse mail indiquée' }
             else
                 format.html { render action: 'new' }
             end
@@ -54,7 +54,7 @@ class OpenfireUsersController < ApplicationController
     def update
         respond_to do |format|
             if @openfire_user.update(openfire_user_params)
-                format.html { redirect_to @openfire_user, notice:'Openfire user was successfully updated.' }
+                format.html { redirect_to @openfire_user, notice:'Le compte openfire a été mis à jour avec success. Un mail contenant les nouvelles données a éte envoyé à l\'adresse mail indiquée' }
             else
                 format.html { render action: 'edit' }
             end

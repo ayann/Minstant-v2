@@ -1,41 +1,28 @@
-<!-- ouverture de la <div id="haut"> au niveau du layout application -->
-    <h1>Sign Up</h1>
-	<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-	  	<%= devise_error_messages! %>
-
-		<div class="inPut">
-			<%= f.label :companyName %>
-			<%= f.text_field :companyName, :autofocus => true %>
+<div class="row" id="devise_sign_up_form">
+	<%= devise_error_messages! %>
+    <h1>Inscription</h1>
+	<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+		<div class="form-inputs">
+			<%= f.input :companyName, label: 'Nom de l\'entreprise',:autofocus => true %>
 		</div>
-		<div class="inPut">
-			<%= f.label :address %>
-			<%= f.text_field :address %>
+		<div class="form-inputs">
+			<%= f.input :address, label: 'Adresse de l\'entreprise' %>
 		</div>
-		<div class="inPut">
-			<%= f.label :tel %>
-			<%= f.text_field :tel %>
+		<div class="form-inputs">
+			<%= f.input :tel, label: 'Numéro de télephone de l\'entreprise'%>
 		</div>
-		<div class="inPut">
-			<%= f.label :email %>
-			<%= f.email_field :email %>
+		<div class="form-inputs">
+			<%= f.input :email %>
 		</div>
-		<div class="inPut">
-			<%= f.label :password %>
-			<%= f.password_field :password %>
+		<div class="form-inputs">
+			<%= f.input :password, label: 'Mot de passe' %>
 		</div>
-
-		<div class="inPut">
-			<%= f.label :password_confirmation %>
-			<%= f.password_field :password_confirmation %>
+		<div class="form-inputs">
+			<%= f.input :password_confirmation, label: 'Repeter mot de passe' %>
 		</div>
-	    <div id="submit">
-	    	<%= f.submit "S'inscrire" %>
+	    <div class="form-actions">
+	    	<%= f.button :submit, "S'incrire",:class => 'button tiny expand' %>
 	    </div>
 	<% end %>
-</div> <!-- fin de la <div id="haut"> -->
-<div id="bas">
-    <div id="b1">
-        <%= render "devise/shared/links" %>
-    </div>
-    <div id="b2"></div>
-</div>
+<div>
+       

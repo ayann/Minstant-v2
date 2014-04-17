@@ -8,7 +8,6 @@ gem 'simple_form'
 gem 'font-awesome-sass'
 gem 'foundation-rails'
 gem 'openfire_api_ruby'
-gem 'openfire_room_api'
 gem 'sqlite3'
 group :assets do
 	# Use SCSS for stylesheets

@@ -26,30 +26,25 @@
       }
    }
 }
+@mixin ombre(){
+  box-shadow: 0 4px 10px -1px rgba(200, 200, 200, 0.7);
+}
 $blue:#008CBA;
 $red:#F04124;
-// $yellow:#FFB848;
 $yellow:#F08A24;
 $green:#28B779;
-
+$gris     :rgba(96, 96, 96, 1.0);
 $panneau:rgba(30, 41, 61, 1.0);
-.hint{
-  clear: left;
-   margin-left: 120px;
-   font-size: 12px;
-   color: #555;
-   display: block;
-   font-style: italic;
-}
+
 body{
 
-   font-family: 'Source Sans Pro', sans-serif;
-   font-size: 19pt;
-   color: #888;
-   -webkit-text-stroke: 0.15px;
-   background-color: rgba(241, 242, 247, 1.0);
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 19pt;
+  color: #888;
+  -webkit-text-stroke: 0.15px;
+  background-color: rgba(241, 242, 247, 1.0);
 
-   section#principale{
+  section#principale{
       width: 100%;
       height: 100%;
       #panel-left {
@@ -203,123 +198,200 @@ body{
                   }
                }
             }
-            #new-ou{
-               font-size: 14px;
-               >.columns{
-                  box-shadow: 0 4px 10px 1px rgba(200, 200, 200, 0.7);
+            #new-ou,#edit-ou{
+              font-size: 14px;
+              >.columns{
+                box-shadow: 0 4px 10px 1px rgba(200, 200, 200, 0.7);
 
-                  border: 1px solid #E5E5E5;
-                  padding: 0;
-                  background-color: #fff;
-                  #titre{
-                    width: 100%;
-                    background-color: $green;
-                    font-size: 25px;
-                    margin-bottom: 15px;
-                    padding: 10px 20px;
+                border: 1px solid #E5E5E5;
+                padding: 0;
+                background-color: #fff;
+                #titre{
+                  width: 100%;
+                  font-size: 25px;
+                  margin-bottom: 15px;
+                  padding: 10px 20px;
+                  h1{
+                  color: #fff;
                   }
-               #form{
+                }
+                .yellow{
+                  background-color: $yellow;
+                }
+                .green{
+                  background-color: $green;
+                }
+                #form{
                   color: #888;
                   padding: 0 20px;
+                  .hint{
+                    margin-top: 5px;
+                  }
                   label{
-                     font-weight: 100;
+                    font-weight: 100;
                   }
                   input{
-                     margin: 0;
+                    margin: 0;
                   }
                   div{
-                     margin-bottom: 20px;
+                    margin-bottom: 20px;
                   }
                   span{
-                     font-weight: 100;
-                     font-style: italic;
+                    font-weight: 100;
+                    font-style: italic;
                   }
                   input.bgreen{
-                     background-color: $green;
-                     text-align: center;
-                     &:hover{
-                        background-color: darken($green,8);
-                     }
-                 }
-               }
-               .bgris{
+                    background-color: $green;
+                    text-align: center;
+                    &:hover{
+                      background-color: darken($green,8);
+                    }
+                  }
+                  input.byellow{
+                    background-color: $yellow;
+                    text-align: center;
+                    &:hover{
+                      background-color: darken($yellow,8);
+                    }
+                  }
+                }
+                .bgris{
                   float: right;
                   background-color: darken(#EBEBEB,18);
                   &:hover{
-                     background-color: darken(#EBEBEB,25);
+                    background-color: darken(#EBEBEB,25);
                   }
-               }
-             }
+                }
+              }
             }
             #all-user{
-               .alert-box{
-                  h1{
-                     color: #fff;
-                  }
-                  font-size: 0.6em;
-                  text-align: center;
-               }
-               .u-present{
-                  float: left;
-                  margin-right:10px;
-                  margin-bottom: 10px;
-                  border: 2px solid #F1F2F7;
-                  font-size: 18px;
-                  width: 240px;
-                  height: 120px;
+              .alert-box{
+                h1{
                   color: #fff;
+                }
+                font-size: 0.6em;
+                text-align: center;
+              }
+              .u-present{
+                float: left;
+                margin-right:10px;
+                margin-bottom: 10px;
+                border: 2px solid #F1F2F7;
+                font-size: 18px;
+                width: 240px;
+                height: 120px;
+                color: #fff;
+                font-weight: 400;
+                &:hover{
+                  //border: 2px solid #838383;
+                }
+                #u-content{
+                  height: 96px;
+                  padding: 10px 0 0 20px;
+                  line-height: 30px;
+                  p{
                   font-weight: 400;
-                  &:hover{
-                     //border: 2px solid #838383;
+                  color: #fff;
                   }
-                  #u-content{
-                     height: 96px;
-                     padding: 10px 0 0 20px;
-                     line-height: 30px;
-                     p{
-                        font-weight: 400;
-                        color: #fff;
-                     }
-
+                }
+                #u-foot{
+                  height: 20px;
+                  color: #fff !important;
+                  a{
+                    color: #fff !important;
+                    overflow: hidden;
+                    display: block;
                   }
-                  #u-foot{
-                     height: 20px;
-                     color: #fff !important;
-                     a{
-                      color: #fff !important;
-                      overflow: hidden;
-                      display: block;
-                     }
-                     span{
-                        margin-top: 5px;
-                        float: left;
-                        font-size: 14px;
-                        margin-left: 10px;
-                     }
-                     i{
-                        float: right;
-                        font-size: 18px;
-                        font-weight: normal;
-                        margin: 0px 10px 0 0;
-                     }
-                     div.clear{
-                        clear: both;
-                     }
+                  span{
+                    margin-top: 5px;
+                    float: left;
+                    font-size: 14px;
+                    margin-left: 10px;
                   }
-               }
+                  i{
+                    float: right;
+                    font-size: 18px;
+                    font-weight: normal;
+                    margin: 0px 10px 0 0;
+                  }
+                  div.clear{
+                    clear: both;
+                  }
+                }
+              }
             }
             #all-user.put-red{
-               @include colored-user($red);
+              @include colored-user($red);
             }
             #all-user.put-blue{
-               @include colored-user($blue);
+              @include colored-user($blue);
             }
             #all-user.put-yellow{
-               @include colored-user($yellow);
+              @include colored-user($yellow);
             }
-         }
+            #devise_sign_up_form, #devise_registration_edit_form{
+              @include ombre;
+              padding: 10px;
+              background-color: #fff;
+              label{
+                font-size: 15px;
+                color: #555;
+                font-style: italic
+              }
+              h1,h2{
+                font-size: 40pt;
+                font-weight: bold;
+                color: $gris;
+                margin: 10px 0 15px 0;
+              }
+              h3{
+                font-size: 30pt;
+                font-weight: bold;
+                color: $gris;
+                margin: 10px 0 15px 0;
+              }
+            }
+            #show-ou{
+              >.columns{
+                box-shadow: 0 4px 10px 1px rgba(200, 200, 200, 0.7);
+                border: 1px solid #E5E5E5;
+                padding: 0;
+                background-color: #fff;
+                #titre{
+                  width: 100%;
+                  font-size: 25px;
+                  margin-bottom: 15px;
+                  padding: 10px 20px;
+                  background-color: $green;
+                  h1{
+                    color: #fff;
+                  }
+                }
+                .content{
+                  padding: 10px;
+                  span{
+                    display: inline-block;
+                    margin-right: 10px;
+                    i{
+                      font-size: 50pt;
+                    }
+                    strong{
+                      font-size: 15px;
+                      color: #555;
+                      font-style: italic;
+                      margin-right: 10px;
+                    }
+                    span{
+                      font-size: 18px;
+                    }
+                    margin-bottom: 10px;
+                  }
+                }
+              }
+            }
+          }
       }
-   }
+  }
 }
 .alert-box.error {
     background-color: rgb(240, 65, 36);
@@ -332,4 +404,16 @@ body{
    h1{
       color: darken(#fff,40);
    }
+}
+.hint,.form-inputs small{
+  clear: left;
+  margin-left: 120px;
+  font-size: 12px;
+  color: #555;
+  display: block;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.hint{
+  margin-top: -12px;
 }

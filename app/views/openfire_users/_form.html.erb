@@ -1,9 +1,17 @@
 <%= simple_form_for @openfire_user do |f| %>
 	<%= f.error_notification %>
 	<%= f.input :name, label: 'Nom et Prénom',required:true %>
-	<%= f.input :username, label: 'Nom d\'utilisateur',required:true %>
+	<% if action_name.to_s=="new" %>
+		<%= f.input :username, label: 'Nom d\'utilisateur',required:true%>
+	<% else %>
+		<%= f.input :username, label: 'Nom d\'utilisateur',disabled:true, required:true%>
+	<% end %>
 	<%= f.input :email, as: :email,label: 'Email',required:true %>
     <%= f.input :groups, label: 'Groupe',hint: 'Ce champ est optionel'%>
-    <%= f.button :submit, :class => 'button tiny bgreen' %>
+	<% if action_name.to_s=="new" %>
+    	<%= f.button :submit, :class => 'button tiny bgreen' %>
+	<% else %>
+    	<%= f.button :submit, :class => 'button tiny byellow' %>
+	<% end %>
     <%= link_to 'Annuler', openfire_users_path,:class => "button tiny bgris" %>
 <% end %>
